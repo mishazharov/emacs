@@ -36,6 +36,9 @@
 (use-package straight
   :custom (straight-use-package-by-default t))
 
+(use-package flycheck
+  :config (global-flycheck-mode))
+
 (use-package vertico
   ;; Special recipe to load extensions conveniently
   :straight (vertico :files (:defaults "extensions/*")
