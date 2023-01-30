@@ -37,6 +37,7 @@
   :custom (straight-use-package-by-default t))
 
 (use-package flycheck
+  :ensure t
   :config (global-flycheck-mode))
 
 (use-package vertico
