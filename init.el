@@ -299,6 +299,12 @@
 	(message "`%s' parser was installed." lang)
 	(sit-for 0.75)))))
 
-(setq debug-on-error t)
+; (setq debug-on-error t)
 (windmove-default-keybindings)
 (setq isearch-wrap-pause 'no-ding)
+
+(add-hook 'emacs-lisp-mode-hook
+	  'flymake-mode)
+
+(provide 'init)
+;;; init.el ends here
