@@ -66,3 +66,4 @@ flycheck_*.el
 /type-break
 /transient/
 /tree-sitter/
+/personal.el

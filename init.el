@@ -305,5 +305,11 @@
 (add-hook 'emacs-lisp-mode-hook
 	  'flymake-mode)
 
+
+(let ((personal-settings (concat (file-name-directory user-init-file) "personal.el")))
+ (when (file-exists-p personal-settings)
+   (load-file personal-settings))
+)
+
 (provide 'init)
 ;;; init.el ends here
