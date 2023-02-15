@@ -29,7 +29,6 @@
 
 (setq xterm-extra-capabilities '(getSelection setSelection reportBackground))
 
-(straight-use-package 'use-package)
 (straight-use-package 'markdown-mode)
 (straight-use-package 'magit)
 
