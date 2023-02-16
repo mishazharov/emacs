@@ -42,7 +42,7 @@
 
 (use-package exec-path-from-shell
   :init
-  (when (memq window-system '(mac ns x))
+  (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize))
   )
 
@@ -317,9 +317,6 @@
  (when (file-exists-p personal-settings)
    (load-file personal-settings))
 )
-
-(when (eq system-type 'darwin)
-  (setenv "LIBRARY_PATH" "/opt/homebrew/opt/gcc/lib/gcc/12:/opt/homebrew/opt/libgccjit/lib/gcc/12:/opt/homebrew/opt/gcc/lib/gcc/12/gcc/aarch64-apple-darwin21/12"))
 
 (provide 'init)
 ;;; init.el ends here
