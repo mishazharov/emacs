@@ -1,3 +1,4 @@
+
 ;; Start emacs server
 ; (server-start) 
 
@@ -38,6 +39,12 @@
 ;; (use-package flycheck
 ;;  :ensure t
 ;;  :config (global-flycheck-mode))
+
+(use-package exec-path-from-shell
+  :init
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize))
+  )
 
 (use-package vertico
   ;; Special recipe to load extensions conveniently
@@ -304,6 +311,12 @@
 
 (add-hook 'emacs-lisp-mode-hook
 	  'flymake-mode)
+
+
+(let ((personal-settings (concat (file-name-directory user-init-file) "personal.el")))
+ (when (file-exists-p personal-settings)
+   (load-file personal-settings))
+)
 
 (provide 'init)
 ;;; init.el ends here
