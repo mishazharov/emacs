@@ -5,6 +5,7 @@
 ;; Relative line numbers
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode)
+(defvar native-comp-deferred-compilation-deny-list ())
 
 ;; IDO mode
 ;; (setq ido-enable-flex-matching t)
