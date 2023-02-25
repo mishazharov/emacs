@@ -1,16 +1,12 @@
+;;; package --- Misha's Emacs configuration -*- lexical-binding: t -*-
 
-;; Start emacs server
-; (server-start) 
+;;; Commentary:
 
-;; Relative line numbers
-(setq display-line-numbers-type 'relative)
-(global-display-line-numbers-mode)
+;; This is a rookie Emacs configuration
+
+;;; Code:
+
 (defvar native-comp-deferred-compilation-deny-list ())
-
-;; IDO mode
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-everywhere t)
-;; (ido-mode 1)
 
 ;; Set customizations path
 (setq custom-file "~/.emacs.d/emacs-custom.el")
@@ -36,10 +32,6 @@
 
 (use-package straight
   :custom (straight-use-package-by-default t))
-
-;; (use-package flycheck
-;;  :ensure t
-;;  :config (global-flycheck-mode))
 
 (use-package exec-path-from-shell
   :init
@@ -84,7 +76,11 @@
   ;;       #'command-completion-default-include-p)
 
   ;; Enable recursive minibuffers
-  (setq enable-recursive-minibuffers t))
+  (setq enable-recursive-minibuffers t)
+  (setq column-number-mode t)
+  ;; Relative line numbers
+  (setq display-line-numbers-type 'relative)
+  (global-display-line-numbers-mode))
 
 ;; Optionally use the `orderless' completion style.
 (use-package orderless
@@ -306,13 +302,11 @@
 	(message "`%s' parser was installed." lang)
 	(sit-for 0.75)))))
 
-; (setq debug-on-error t)
 (windmove-default-keybindings)
 (setq isearch-wrap-pause 'no-ding)
 
 (add-hook 'emacs-lisp-mode-hook
 	  'flymake-mode)
-
 
 (let ((personal-settings (concat (file-name-directory user-init-file) "personal.el")))
  (when (file-exists-p personal-settings)
