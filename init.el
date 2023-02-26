@@ -62,8 +62,20 @@
   :init
   (savehist-mode))
 
+;; See https://emacs.stackexchange.com/a/48585/
+(defun ask-before-closing ()
+  "Replace `save-buffers-kill-terminal' to make sure the server isn't killed."
+  (interactive)
+  (if (daemonp)
+      (if (y-or-n-p (format "Really exit Emacs? "))
+          (save-buffers-kill-terminal)
+        (message "Canceled frame close!"))
+    (save-buffers-kill-terminal)))
+
 ;; A few more useful configurations...
 (use-package emacs
+  :bind (("C-x C-c" . 'ask-before-closing))
+
   :init
   ;; Do not allow the cursor in the minibuffer prompt
   ;; (setq minibuffer-prompt-properties
