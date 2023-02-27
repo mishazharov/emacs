@@ -62,6 +62,18 @@
   :init
   (savehist-mode))
 
+(use-package company
+  :config
+  (setq company-idle-delay 0.3)
+  (global-company-mode t)
+  ;; the following stops company from using the orderless completion style
+  ;; makes company much more useful
+  ;; Source: https://www.patrickdelliott.com/emacs.d/
+  (define-advice company-capf
+      (:around (orig-fun &rest args) set-completion-styles)
+    (let ((completion-styles '(basic partial-completion)))
+      (apply orig-fun args))))
+
 ;; See https://emacs.stackexchange.com/a/48585/
 (defun ask-before-closing ()
   "Replace `save-buffers-kill-terminal' to make sure the server isn't killed."
