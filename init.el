@@ -87,7 +87,6 @@
 ;; A few more useful configurations...
 (use-package emacs
   :bind (("C-x C-c" . 'ask-before-closing))
-
   :init
   ;; Do not allow the cursor in the minibuffer prompt
   ;; (setq minibuffer-prompt-properties
@@ -105,6 +104,15 @@
   ;; Relative line numbers
   (setq display-line-numbers-type 'relative)
   (global-display-line-numbers-mode))
+
+(use-package flyspell
+  :config
+  (setq ispell-program-name "aspell")
+  (setq ispell-list-command "--list")
+  (add-hook 'text-mode-hook 'flyspell-mode)
+  (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+  (setq flyspell-issue-message-flag nil)
+  (unbind-key "C-." flyspell-mode-map))
 
 ;; Optionally use the `orderless' completion style.
 (use-package orderless
@@ -246,7 +254,6 @@
 )
 
 (use-package embark
-
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
    ("C-;" . embark-dwim)        ;; good alternative: M-.
