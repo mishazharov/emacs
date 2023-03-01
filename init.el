@@ -35,9 +35,8 @@
 
 (use-package exec-path-from-shell
   :init
-  (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize))
-  )
+  (when (or (memq window-system '(mac ns) (daemonp)))
+    (exec-path-from-shell-initialize)))
 
 (use-package vertico
   ;; Special recipe to load extensions conveniently
