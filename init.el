@@ -35,7 +35,7 @@
 
 (use-package exec-path-from-shell
   :init
-  (when (or (memq window-system '(mac ns) (daemonp)))
+  (when (or (memq window-system '(mac ns)) (daemonp))
     (exec-path-from-shell-initialize)))
 
 (use-package vertico
