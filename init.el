@@ -86,6 +86,7 @@
 ;; A few more useful configurations...
 (use-package emacs
   :bind (("C-x C-c" . 'ask-before-closing))
+  :straight nil
   :init
   ;; Do not allow the cursor in the minibuffer prompt
   ;; (setq minibuffer-prompt-properties
@@ -105,6 +106,7 @@
   (global-display-line-numbers-mode))
 
 (use-package flyspell
+  :straight nil
   :config
   (setq ispell-program-name "aspell")
   (setq ispell-list-command "--list")
@@ -331,6 +333,11 @@
 	(treesit-install-language-grammar lang)
 	(message "`%s' parser was installed." lang)
 	(sit-for 0.75)))))
+
+(use-package yaml-ts
+  :straight nil
+  :mode (("\\.yaml\\'" . yaml-ts-mode)
+         ("\\.yml\\'" . yaml-ts-mode)))
 
 (windmove-default-keybindings)
 (setq isearch-wrap-pause 'no-ding)
