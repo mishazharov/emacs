@@ -88,6 +88,7 @@
 (use-package emacs
   :bind (("C-x C-c" . 'ask-before-closing))
   :straight nil
+  :hook ((emacs-lisp-mode . flymake-mode))
   :init
   ;; Do not allow the cursor in the minibuffer prompt
   ;; (setq minibuffer-prompt-properties
@@ -289,7 +290,8 @@
   :config (setq
    rustic-lsp-client 'eglot
    rustic-format-on-save nil
-   rustic-analyzer-command '("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer")))
+   rustic-analyzer-command '("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer"))
+  :hook ((rust-ts-mode . rustic-mode)))
 
 ;; Keeping this around *just in case eglot turns evil*
 ;;
@@ -343,13 +345,9 @@
 (windmove-default-keybindings)
 (setq isearch-wrap-pause 'no-ding)
 
-(add-hook 'emacs-lisp-mode-hook
-	  'flymake-mode)
-
 (let ((personal-settings (concat (file-name-directory user-init-file) "personal.el")))
  (when (file-exists-p personal-settings)
-   (load-file personal-settings))
-)
+   (load-file personal-settings)))
 
 (provide 'init)
 ;;; init.el ends here
