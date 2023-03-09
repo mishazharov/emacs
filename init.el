@@ -6,6 +6,7 @@
 
 ;;; Code:
 
+(require 'compile)
 (defvar native-comp-deferred-compilation-deny-list ())
 
 ;; Set customizations path
