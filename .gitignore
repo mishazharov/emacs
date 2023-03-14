@@ -67,3 +67,5 @@ flycheck_*.el
 /transient/
 /tree-sitter/
 /personal.el
+/auto-save/
+/backups/
