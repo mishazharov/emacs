@@ -342,6 +342,14 @@
   :mode (("\\.yaml\\'" . yaml-ts-mode)
          ("\\.yml\\'" . yaml-ts-mode)))
 
+(use-package diff-hl
+  :straight (diff-hl :type git :host github :repo "dgutov/diff-hl")
+  :config
+  (global-diff-hl-mode)
+  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+  (add-hook 'dired-mode-hook (lambda () (progn (diff-hl-dired-mode) (revert-buffer)))))
+
 (windmove-default-keybindings)
 (setq isearch-wrap-pause 'no-ding)
 
