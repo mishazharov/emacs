@@ -105,7 +105,12 @@
   (setq column-number-mode t)
   ;; Relative line numbers
   (setq display-line-numbers-type 'relative)
-  (global-display-line-numbers-mode))
+  (global-display-line-numbers-mode)
+  (setq auto-save-file-name-transforms
+        `((".*" ,(concat user-emacs-directory "auto-save/") t)))
+  (setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups"))))))
 
 (use-package flyspell
   :straight nil
