@@ -355,6 +355,10 @@
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   (add-hook 'dired-mode-hook (lambda () (progn (diff-hl-dired-mode) (revert-buffer)))))
 
+(use-package web-mode
+  :straight (web-mode :type git :host github :repo "fxbois/web-mode")
+  :config (add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode)))
+
 (windmove-default-keybindings)
 (setq isearch-wrap-pause 'no-ding)
 
