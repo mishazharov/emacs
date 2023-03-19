@@ -110,7 +110,9 @@
         `((".*" ,(concat user-emacs-directory "auto-save/") t)))
   (setq backup-directory-alist
       `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups"))))))
+                 (concat user-emacs-directory "backups")))))
+  (windmove-default-keybindings)
+  (setq isearch-wrap-pause 'no-ding))
 
 (use-package flyspell
   :straight nil
@@ -358,9 +360,6 @@
 (use-package web-mode
   :straight (web-mode :type git :host github :repo "fxbois/web-mode")
   :config (add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode)))
-
-(windmove-default-keybindings)
-(setq isearch-wrap-pause 'no-ding)
 
 (let ((personal-settings (concat (file-name-directory user-init-file) "personal.el")))
  (when (file-exists-p personal-settings)
