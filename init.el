@@ -112,7 +112,8 @@
       `(("." . ,(expand-file-name
                  (concat user-emacs-directory "backups")))))
   (windmove-default-keybindings)
-  (setq isearch-wrap-pause 'no-ding))
+  (setq isearch-wrap-pause 'no-ding)
+  (setq visible-bell t))
 
 (use-package flyspell
   :straight nil
@@ -360,6 +361,9 @@
 (use-package web-mode
   :straight (web-mode :type git :host github :repo "fxbois/web-mode")
   :config (add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode)))
+
+(use-package wgrep
+  :straight (wgrep :type git :host github :repo "mhayashi1120/Emacs-wgrep"))
 
 (let ((personal-settings (concat (file-name-directory user-init-file) "personal.el")))
  (when (file-exists-p personal-settings)
