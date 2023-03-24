@@ -334,7 +334,8 @@
 	  (sql . ("https://github.com/DerekStride/tree-sitter-sql"))
 	  (toml . ("https://github.com/tree-sitter/tree-sitter-toml"))
 	  (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
-	  (zig . ("https://github.com/GrayJack/tree-sitter-zig"))))
+	  (zig . ("https://github.com/GrayJack/tree-sitter-zig"))
+	  (cmake . ("https://github.com/uyha/tree-sitter-cmake"))))
   :config
   (defun nf/treesit-install-all-languages ()
     "Install all languages specified by `treesit-language-source-alist'."
@@ -349,6 +350,11 @@
   :straight nil
   :mode (("\\.yaml\\'" . yaml-ts-mode)
          ("\\.yml\\'" . yaml-ts-mode)))
+
+(use-package cmake-ts
+  :straight nil
+  :mode (("\\.cmake\\'" . cmake-ts-mode)
+         ("\\CMakeLists.txt\\'" . cmake-ts-mode)))
 
 (use-package diff-hl
   :straight (diff-hl :type git :host github :repo "dgutov/diff-hl")
