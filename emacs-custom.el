@@ -4,7 +4,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auth-source-save-behavior nil)
- '(consult-find-args "find . -not ( -wholename */.*/ -prune )")
  '(custom-enabled-themes '(wombat))
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta))
