@@ -28,7 +28,10 @@
 
 (setq xterm-extra-capabilities '(getSelection setSelection reportBackground))
 
-(straight-use-package 'markdown-mode)
+(use-package markdown-mode
+  :ensure t
+  :hook (markdown-mode . (lambda () (set-fill-column 120))))
+
 (straight-use-package 'magit)
 
 (use-package straight
@@ -113,7 +116,8 @@
                  (concat user-emacs-directory "backups")))))
   (windmove-default-keybindings)
   (setq isearch-wrap-pause 'no-ding)
-  (setq visible-bell t))
+  (setq visible-bell t)
+  (setq save-interprogram-paste-before-kill t))
 
 (use-package flyspell
   :straight nil
