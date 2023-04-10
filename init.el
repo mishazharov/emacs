@@ -117,7 +117,8 @@
   (windmove-default-keybindings)
   (setq isearch-wrap-pause 'no-ding)
   (setq visible-bell t)
-  (setq save-interprogram-paste-before-kill t))
+  (setq save-interprogram-paste-before-kill t)
+  (setq-default indent-tabs-mode nil))
 
 (use-package flyspell
   :straight nil
@@ -358,7 +359,9 @@
 (use-package cmake-ts
   :straight nil
   :mode (("\\.cmake\\'" . cmake-ts-mode)
-         ("\\CMakeLists.txt\\'" . cmake-ts-mode)))
+         ("\\CMakeLists.txt\\'" . cmake-ts-mode))
+  :config
+  (setq indent-tabs-mode nil))
 
 (use-package diff-hl
   :straight (diff-hl :type git :host github :repo "dgutov/diff-hl")
