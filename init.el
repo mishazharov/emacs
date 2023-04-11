@@ -303,7 +303,8 @@
   :config (setq
    rustic-lsp-client 'eglot
    rustic-format-on-save nil
-   rustic-analyzer-command '("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer"))
+   rustic-analyzer-command '("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer")
+   eldoc-echo-area-use-multiline-p nil)
   :hook ((rust-ts-mode . rustic-mode)))
 
 ;; Keeping this around *just in case eglot turns evil*
