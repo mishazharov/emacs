@@ -104,20 +104,20 @@
   ;;       #'command-completion-default-include-p)
 
   ;; Enable recursive minibuffers
-  (setq enable-recursive-minibuffers t)
-  (setq column-number-mode t)
-  ;; Relative line numbers
-  (setq display-line-numbers-type 'relative)
-  (global-display-line-numbers-mode)
-  (setq auto-save-file-name-transforms
-        `((".*" ,(concat user-emacs-directory "auto-save/") t)))
-  (setq backup-directory-alist
-      `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
-  (windmove-default-keybindings)
-  (setq isearch-wrap-pause 'no-ding)
-  (setq visible-bell t)
-  (setq save-interprogram-paste-before-kill t)
+  (setq enable-recursive-minibuffers t
+        column-number-mode t
+        ;; Relative line numbers
+        display-line-numbers-type 'relative
+        global-display-line-numbers-mode
+        auto-save-file-name-transforms
+        `((".*" ,(concat user-emacs-directory "auto-save/") t))
+        backup-directory-alist
+        `(("." . ,(expand-file-name
+                   (concat user-emacs-directory "backups"))))
+        windmove-default-keybindings
+        isearch-wrap-pause 'no-ding
+        visible-bell t
+        save-interprogram-paste-before-kill t)
   (setq-default indent-tabs-mode nil))
 
 (use-package flyspell
@@ -296,15 +296,15 @@
 ;; Enhanced Rust mode with automatic LSP support.
 (use-package rustic
   :straight (rustic :type git :host github :repo "brotzeit/rustic"
-		    :fork (:protocol ssh
-			   :host github
-			   :branch "cargo-outdated-workspace"
-			   :repo "mishazharov/rustic"))
+                    :fork (:protocol ssh
+                                     :host github
+                                     :branch "cargo-outdated-workspace"
+                                     :repo "mishazharov/rustic"))
   :config (setq
-   rustic-lsp-client 'eglot
-   rustic-format-on-save nil
-   rustic-analyzer-command '("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer")
-   eldoc-echo-area-use-multiline-p nil)
+           rustic-lsp-client 'eglot
+           rustic-format-on-save nil
+           rustic-analyzer-command '("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer")
+           eldoc-echo-area-use-multiline-p nil)
   :hook ((rust-ts-mode . rustic-mode)))
 
 ;; Keeping this around *just in case eglot turns evil*
@@ -320,37 +320,37 @@
   :commands (treesit-install-language-grammar nf/treesit-install-all-languages)
   :init
   (setq treesit-language-source-alist
-	'((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
-	  (c . ("https://github.com/tree-sitter/tree-sitter-c"))
-	  (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp"))
-	  (css . ("https://github.com/tree-sitter/tree-sitter-css"))
-	  (go . ("https://github.com/tree-sitter/tree-sitter-go"))
-	  (html . ("https://github.com/tree-sitter/tree-sitter-html"))
-	  (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript"))
-	  (json . ("https://github.com/tree-sitter/tree-sitter-json"))
-	  (lua . ("https://github.com/Azganoth/tree-sitter-lua"))
-	  (make . ("https://github.com/alemuller/tree-sitter-make"))
-	  (ocaml . ("https://github.com/tree-sitter/tree-sitter-ocaml" "master" "ocaml/src"))
-	  (python . ("https://github.com/tree-sitter/tree-sitter-python"))
-	  (php . ("https://github.com/tree-sitter/tree-sitter-php"))
-	  (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src"))
-	  (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src"))
-	  (ruby . ("https://github.com/tree-sitter/tree-sitter-ruby"))
-	  (rust . ("https://github.com/tree-sitter/tree-sitter-rust"))
-	  (sql . ("https://github.com/DerekStride/tree-sitter-sql"))
-	  (toml . ("https://github.com/tree-sitter/tree-sitter-toml"))
-	  (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
-	  (zig . ("https://github.com/GrayJack/tree-sitter-zig"))
-	  (cmake . ("https://github.com/uyha/tree-sitter-cmake"))))
+        '((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
+          (c . ("https://github.com/tree-sitter/tree-sitter-c"))
+          (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp"))
+          (css . ("https://github.com/tree-sitter/tree-sitter-css"))
+          (go . ("https://github.com/tree-sitter/tree-sitter-go"))
+          (html . ("https://github.com/tree-sitter/tree-sitter-html"))
+          (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript"))
+          (json . ("https://github.com/tree-sitter/tree-sitter-json"))
+          (lua . ("https://github.com/Azganoth/tree-sitter-lua"))
+          (make . ("https://github.com/alemuller/tree-sitter-make"))
+          (ocaml . ("https://github.com/tree-sitter/tree-sitter-ocaml" "master" "ocaml/src"))
+          (python . ("https://github.com/tree-sitter/tree-sitter-python"))
+          (php . ("https://github.com/tree-sitter/tree-sitter-php"))
+          (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src"))
+          (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src"))
+          (ruby . ("https://github.com/tree-sitter/tree-sitter-ruby"))
+          (rust . ("https://github.com/tree-sitter/tree-sitter-rust"))
+          (sql . ("https://github.com/DerekStride/tree-sitter-sql"))
+          (toml . ("https://github.com/tree-sitter/tree-sitter-toml"))
+          (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
+          (zig . ("https://github.com/GrayJack/tree-sitter-zig"))
+          (cmake . ("https://github.com/uyha/tree-sitter-cmake"))))
   :config
   (defun nf/treesit-install-all-languages ()
     "Install all languages specified by `treesit-language-source-alist'."
     (interactive)
     (let ((languages (mapcar 'car treesit-language-source-alist)))
       (dolist (lang languages)
-	(treesit-install-language-grammar lang)
-	(message "`%s' parser was installed." lang)
-	(sit-for 0.75)))))
+        (treesit-install-language-grammar lang)
+        (message "`%s' parser was installed." lang)
+        (sit-for 0.75)))))
 
 (use-package yaml-ts
   :straight nil
