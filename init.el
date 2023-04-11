@@ -378,6 +378,9 @@
 (use-package wgrep
   :straight (wgrep :type git :host github :repo "mhayashi1120/Emacs-wgrep"))
 
+(use-package dtrt-indent
+  :straight (dtrt-indent :type git :host github :repo "jscheid/dtrt-indent"))
+
 (let ((personal-settings (concat (file-name-directory user-init-file) "personal.el")))
  (when (file-exists-p personal-settings)
    (load-file personal-settings)))

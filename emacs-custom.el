@@ -6,6 +6,7 @@
  '(auth-source-save-behavior nil)
  '(cmake-ts-mode-indent-offset 4)
  '(custom-enabled-themes '(wombat))
+ '(dtrt-indent-global-mode t)
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta))
 (custom-set-faces
