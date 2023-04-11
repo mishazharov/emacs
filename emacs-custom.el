@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auth-source-save-behavior nil)
+ '(cmake-ts-mode-indent-offset 4)
  '(custom-enabled-themes '(wombat))
  '(ns-alternate-modifier 'super)
  '(ns-command-modifier 'meta))
