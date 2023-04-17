@@ -108,17 +108,17 @@
         column-number-mode t
         ;; Relative line numbers
         display-line-numbers-type 'relative
-        global-display-line-numbers-mode
         auto-save-file-name-transforms
         `((".*" ,(concat user-emacs-directory "auto-save/") t))
         backup-directory-alist
         `(("." . ,(expand-file-name
                    (concat user-emacs-directory "backups"))))
-        windmove-default-keybindings
         isearch-wrap-pause 'no-ding
         visible-bell t
         save-interprogram-paste-before-kill t)
-  (setq-default indent-tabs-mode nil))
+  (setq-default indent-tabs-mode nil)
+  (global-display-line-numbers-mode)
+  (windmove-default-keybindings))
 
 (use-package flyspell
   :straight nil
