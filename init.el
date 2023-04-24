@@ -357,6 +357,11 @@
   :mode (("\\.yaml\\'" . yaml-ts-mode)
          ("\\.yml\\'" . yaml-ts-mode)))
 
+(use-package python-mode
+  :straight nil
+  :hook (eglot-ensure which-func-mode)
+  :mode (("\\.py\\'" . python-mode)))
+
 (use-package cmake-ts
   :straight nil
   :mode (("\\.cmake\\'" . cmake-ts-mode)
