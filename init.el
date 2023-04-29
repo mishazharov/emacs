@@ -28,14 +28,13 @@
 
 (setq xterm-extra-capabilities '(getSelection setSelection reportBackground))
 
-(use-package markdown-mode
-  :ensure t
-  :hook (markdown-mode . (lambda () (set-fill-column 120))))
-
-(straight-use-package 'magit)
-
 (use-package straight
   :custom (straight-use-package-by-default t))
+
+(use-package markdown-mode
+  :hook (markdown-mode . (lambda () (set-fill-column 120))))
+
+(use-package magit)
 
 (use-package exec-path-from-shell
   :init
