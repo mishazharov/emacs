@@ -292,6 +292,10 @@
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 
+;; lsp-mode
+(use-package lsp-mode
+  :straight (lsp-mode :type git :host github :repo "emacs-lsp/lsp-mode"))
+
 ;; Enhanced Rust mode with automatic LSP support.
 (use-package rustic
   :straight (rustic :type git :host github :repo "brotzeit/rustic"
@@ -300,7 +304,6 @@
                                      :branch "cargo-outdated-workspace"
                                      :repo "mishazharov/rustic"))
   :config (setq
-           rustic-lsp-client 'eglot
            rustic-format-on-save nil
            rustic-analyzer-command '("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer")
            eldoc-echo-area-use-multiline-p nil)
@@ -358,7 +361,6 @@
 
 (use-package python-mode
   :straight nil
-  :hook (eglot-ensure which-func-mode)
   :mode (("\\.py\\'" . python-mode)))
 
 (use-package cmake-ts
