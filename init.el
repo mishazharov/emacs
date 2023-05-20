@@ -390,7 +390,8 @@
   :straight (dtrt-indent :type git :host github :repo "jscheid/dtrt-indent"))
 
 (defun c-mode-indentation-hook ()
-  (c-set-offset 'statement-block-intro '++))
+  (c-set-offset 'statement-block-intro '++)
+  (c-set-offset 'defun-block-intro '++))
 (add-hook 'c-mode-common-hook 'c-mode-indentation-hook)
 
 (let ((personal-settings (concat (file-name-directory user-init-file) "personal.el")))
