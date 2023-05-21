@@ -105,7 +105,6 @@
   ;; Enable recursive minibuffers
   (setq enable-recursive-minibuffers t
         column-number-mode t
-        show-trailing-whitespace t
         ;; Relative line numbers
         display-line-numbers-type 'relative
         auto-save-file-name-transforms
