@@ -388,6 +388,11 @@
 (use-package dtrt-indent
   :straight (dtrt-indent :type git :host github :repo "jscheid/dtrt-indent"))
 
+(use-package projectile
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
 (defun c-mode-indentation-hook ()
   (c-set-offset 'statement-block-intro '++)
   (c-set-offset 'defun-block-intro '++))

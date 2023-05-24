@@ -70,3 +70,4 @@ flycheck_*.el
 /auto-save/
 /backups/
 .lsp-session*
+/projectile-bookmarks.eld
