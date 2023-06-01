@@ -396,6 +396,12 @@
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))
+
 (defun c-mode-indentation-hook ()
   (c-set-offset 'statement-block-intro '++)
   (c-set-offset 'defun-block-intro '++))
