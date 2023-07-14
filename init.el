@@ -383,7 +383,9 @@
 
 (use-package web-mode
   :straight (web-mode :type git :host github :repo "fxbois/web-mode")
-  :config (add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode)))
+  :config (add-to-list 'auto-mode-alist
+                       '("\\.svelte\\'" . web-mode)
+                       '("\\.ts\\'" . web-mode)))
 
 (use-package wgrep
   :straight (wgrep :type git :host github :repo "mhayashi1120/Emacs-wgrep"))
