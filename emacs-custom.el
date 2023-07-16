@@ -9,8 +9,8 @@
  '(diff-hl-flydiff-mode t)
  '(dtrt-indent-global-mode t)
  '(global-diff-hl-mode t)
- '(ns-alternate-modifier 'super)
- '(ns-command-modifier 'meta)
+ '(ns-alternate-modifier 'meta)
+ '(ns-command-modifier 'control)
  '(require-final-newline t)
  '(show-trailing-whitespace t))
 (custom-set-faces
