@@ -117,7 +117,9 @@
         save-interprogram-paste-before-kill t)
   (setq-default indent-tabs-mode nil)
   (global-display-line-numbers-mode)
-  (windmove-default-keybindings))
+  (windmove-default-keybindings)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1))
 
 (use-package flyspell
   :straight nil
