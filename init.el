@@ -389,7 +389,8 @@
          ("\\.ts\\'" . web-mode)))
 
 (use-package wgrep
-  :straight (wgrep :type git :host github :repo "mhayashi1120/Emacs-wgrep"))
+  :straight (wgrep :type git :host github :repo "mhayashi1120/Emacs-wgrep")
+  :config (setq wgrep-auto-save-buffer t))
 
 (use-package dtrt-indent
   :straight (dtrt-indent :type git :host github :repo "jscheid/dtrt-indent"))
