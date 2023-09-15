@@ -299,7 +299,9 @@
   :straight (lsp-mode :type git :host github :repo "emacs-lsp/lsp-mode")
   :config
   (setq lsp-inlay-hint-enable t)
-  :hook (lsp-inlay-hints-mode . lsp-mode))
+  :hook (
+         (lsp-inlay-hints-mode . lsp-mode)
+         (python-mode . lsp-mode)))
 
 ;; Enhanced Rust mode with automatic LSP support.
 (use-package rustic
