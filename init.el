@@ -299,8 +299,7 @@
   :straight (lsp-mode :type git :host github :repo "emacs-lsp/lsp-mode")
   :config
   (setq lsp-inlay-hint-enable t)
-  :hook (
-         (lsp-inlay-hints-mode . lsp-mode)
+  :hook ((lsp-inlay-hints-mode . lsp-mode)
          (python-mode . lsp-mode)))
 
 ;; Enhanced Rust mode with automatic LSP support.
@@ -312,7 +311,6 @@
                                      :repo "mishazharov/rustic"))
   :config (setq
            rustic-format-on-save nil
-           rustic-analyzer-command '("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer")
            eldoc-echo-area-use-multiline-p nil)
   :hook ((rust-ts-mode . rustic-mode)))
 
