@@ -71,3 +71,4 @@ flycheck_*.el
 /backups/
 .lsp-session*
 /projectile-bookmarks.eld
+/.cache/

@@ -406,6 +406,17 @@
                           (require 'lsp-pyright)
                           (lsp))))
 
+(use-package bazel
+  :ensure t
+  :mode (("WORKSPACE\\.bazel\\'" . bazel-workspace-mode)
+         ("WORKSPACE\\'" . bazel-workspace-mode)
+         ("\\.bazel\\'" . bazel-build-mode)
+         ("\\.bazelrc\\'" . bazelrc-mode)
+         ("\\.bazelignore\\'" . bazelignore-mode)
+         ("\\.bazeliskrc\\'". bazeliskrc-mode)
+         ("\\.bzl\\'" . bazel-starlark-mode))
+  :straight (bazel :type git :host github :repo "bazelbuild/emacs-bazel-mode"))
+
 (defun c-mode-indentation-hook ()
   (c-set-offset 'statement-block-intro '++)
   (c-set-offset 'defun-block-intro '++))
