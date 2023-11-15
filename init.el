@@ -410,6 +410,7 @@
   :ensure t
   :mode (("WORKSPACE\\.bazel\\'" . bazel-workspace-mode)
          ("WORKSPACE\\'" . bazel-workspace-mode)
+         ("MODULE\\.bazel\\'" . bazel-module-mode)
          ("\\.bazel\\'" . bazel-build-mode)
          ("\\.bazelrc\\'" . bazelrc-mode)
          ("\\.bazelignore\\'" . bazelignore-mode)
