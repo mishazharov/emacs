@@ -297,10 +297,12 @@
 ;; lsp-mode
 (use-package lsp-mode
   :straight (lsp-mode :type git :host github :repo "emacs-lsp/lsp-mode")
+  :init
+  (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-inlay-hint-enable t)
-  :hook ((lsp-inlay-hints-mode . lsp-mode)
-         (python-mode . lsp-mode)))
+  :hook ((python-mode . lsp-deferred))
+  :commands (lsp lsp-deferred))
 
 ;; Enhanced Rust mode with automatic LSP support.
 (use-package rustic
