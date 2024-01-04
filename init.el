@@ -301,6 +301,7 @@
   (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-inlay-hint-enable t)
+  (lsp-inlay-hints-mode)
   :hook ((python-mode . lsp-deferred))
   :commands (lsp lsp-deferred))
 
