@@ -379,6 +379,10 @@
   :config
   (setq indent-tabs-mode nil))
 
+(use-package go-ts
+  :straight nil
+  :mode (("\\.go\\'" . go-ts-mode)))
+
 (use-package dockerfile-ts
   :straight nil
   :mode (("Dockerfile.*" . dockerfile-ts-mode)))
