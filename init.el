@@ -307,11 +307,7 @@
 
 ;; Enhanced Rust mode with automatic LSP support.
 (use-package rustic
-  :straight (rustic :type git :host github :repo "brotzeit/rustic"
-                    :fork (:protocol ssh
-                                     :host github
-                                     :branch "cargo-outdated-workspace"
-                                     :repo "mishazharov/rustic"))
+  :straight (rustic :type git :host github :repo "brotzeit/rustic")
   :config (setq
            rustic-format-on-save nil
            eldoc-echo-area-use-multiline-p nil)
@@ -441,3 +437,4 @@
 
 (provide 'init)
 ;;; init.el ends here
+(put 'downcase-region 'disabled nil)

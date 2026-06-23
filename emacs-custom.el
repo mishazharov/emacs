@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -9,6 +10,7 @@
  '(diff-hl-flydiff-mode t)
  '(dtrt-indent-global-mode t)
  '(global-diff-hl-mode t)
+ '(magit-diff-refine-hunk 'all)
  '(ns-alternate-modifier 'meta)
  '(ns-command-modifier 'control)
  '(require-final-newline t)
