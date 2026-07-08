@@ -62,6 +62,7 @@ flycheck_*.el
 /straight/build/
 /straight/repos/
 /straight/build-cache.el
+/straight/modified/
 '\#*\#'
 /type-break
 /transient/
